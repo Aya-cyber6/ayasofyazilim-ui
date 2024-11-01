@@ -87,11 +87,10 @@ export default function LoginForm({
       const response = await loginFunction(values);
       if (response?.status === 200) {
         if (router) {
-          const locale = window.location.pathname.split('/')[1];
-          router.push(`/${locale}/`);
+          router.back();
           return;
         }
-        window.location.reload();
+        window.history.back();
         return;
       }
       toast.error(response?.description);
