@@ -90,6 +90,7 @@ export default function LoginForm({
           router.back();
           return;
         }
+
         window.history.back();
         return;
       }
